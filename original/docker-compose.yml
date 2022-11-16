@@ -1,0 +1,9 @@
+version: "3"
+services:
+  # php
+  # mysql
+networks:
+  dokushu_net:
+volumes:
+  # php
+  # mysql
