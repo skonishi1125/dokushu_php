@@ -1,9 +1,42 @@
 version: "3"
 services:
-  # php
-  # mysql
+  php:
+    image: php:8.0-apache
+    volumes:
+      # ymlファイルと同じ階層にあるphp.iniをコンテナのものと合わせる
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - .:/var/www/html
+    ports:
+      - 8100:80
+    networks:
+      - dokushu_net
+  mysql:
+    image: mysql:5.5
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - dokushu_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - TZ=Asia/Tokyo
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    volumes:
+      - ./phpmyadmin/sessions:/sessions
+    networks:
+      - dokushu_net
+    ports:
+      - 4040:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=test
+      - PMA_PASSWORD=test
 networks:
   dokushu_net:
-volumes:
+# volumes:
   # php
   # mysql
