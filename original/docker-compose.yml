@@ -1,9 +1,18 @@
 version: "3"
 services:
-  # php
+  php:
+    image: php:8.0-apache
+    volumes:
+      # ymlファイルと同じ階層にあるphp.iniをコンテナのものと合わせる
+      - ./php.ini:/usr/local/etc/php/php.ini
+      - .:/var/www/html
+    ports:
+      - 8100:80
+    networks:
+      - dokushu_net
   # mysql
 networks:
   dokushu_net:
-volumes:
+# volumes:
   # php
   # mysql
