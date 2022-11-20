@@ -9,21 +9,48 @@
 <body>
   <?php
 
-    // const VALUE = $x;
-    // const MAIN = dirname(__FILE__) . '/test.php';
-    awawagaefa
+
+    // echo __LINE__;
+    $bool = tRUe;
+    echo $bool . PHP_EOL;
+
+    $num = 0xFF;
+    echo $num . PHP_EOL;
+    echo gettype($num) . PHP_EOL;
+
+    $separate = 1_234_567;
+    echo  $separate. PHP_EOL;
 
 
-    phpinfo();
 
-    error_log('エラーるご');
+    // phpinfo();
+
+    // error_log('エラーるご');
     
     /*
         aaaa
         aawawawa
     //*/
 
+  
+  ?>
 
+  <br>
+  <?php
+
+  $title  = 'サーバーサイドの学びや';
+  $data1  = "サポートサイト\t「 $title 」へ". PHP_EOL;
+  $data2  = 'サポートサイト\t「{$title}」へ';
+
+  print $data1;
+  print $data2;
+  
+  ?>
+
+  <br>
+
+  <?php
+    
   
   ?>
   
