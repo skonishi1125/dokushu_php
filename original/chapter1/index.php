@@ -47,12 +47,41 @@
   
   ?>
 
-  <br>
+  <br><br>
 
   <?php
-    
+    $text = <<<EOD
+      PHPはサーバーサイドの言語です。
+      まずは本書から学んでみましょう。
+    EOD;
+
+    echo $text . PHP_EOL;
+
+    echo "<br>";
+
+    $data1 = [
+      ['x-1', 'x-2', 'x-3'],
+      ['y-1', 'y-2', 'y-3'],
+      ['z-1', 'z-2', 'z-3'],
+    ];
+
+    print_r($data1);
+    echo "<br>";
+    echo $data1[0][2];
+
+    echo "<br>";
+    echo "<br>";
+
+    $num  = (string)100;
+    echo $num . PHP_EOL;
+    var_dump($num);
+
   
   ?>
+
+  <br>
+
+
   
 </body>
 </html>
