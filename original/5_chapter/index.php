@@ -88,6 +88,18 @@
   });
   print_r($array);
 
+  printf("<br><br>");
+
+  $file = fopen('access.log', 'r');
+  flock($file, LOCK_SH);
+
+  $x = fgets($file, 1024);
+  var_dump($x);
+
+  flock($file, LOCK_UN);
+  fclose($file);
+
 
 
 ?>
+
